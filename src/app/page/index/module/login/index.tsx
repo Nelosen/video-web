@@ -3,8 +3,7 @@ import {observer} from 'mobx-react'
 import * as styles from "./style.pcss";
 import {Footer} from 'component/footer'
 import {store} from "./store";
-
-import {Form, Icon, Input, Button} from 'antd';
+import {Form, Icon, Input, Button, Checkbox} from 'antd';
 
 const FormItem = Form.Item;
 
@@ -40,6 +39,11 @@ export class Left extends Component<any, any> {
     }
     public loginOut = () => {
         store.changeIsLog(true)
+    }
+
+    public goto = () => {
+        const redirectUrl = process.env.REDIRECT_URL;
+        window.open(redirectUrl + "checkInf.html#")
     }
 
     public render() {
@@ -124,6 +128,10 @@ export class Left extends Component<any, any> {
                                             className="login-form-button">
                                             注册
                                         </Button>
+                                        <Checkbox
+                                        >
+                                            <span>我已阅读并同意<a onClick={this.goto}>《广锦商务注册协议》</a></span>
+                                        </Checkbox>
                                         <p style={{textAlign: 'center'}}><span>已有账号</span><a
                                             onClick={this.loginOut}>登陆</a></p>
                                     </FormItem>
