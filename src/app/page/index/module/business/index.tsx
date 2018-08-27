@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {observer} from 'mobx-react'
 import {store} from './store'
 import * as style from "./style.pcss";
-// import {Row, Col} from 'antd';
+import {Button} from 'antd';
 import {Footer} from 'component/footer'
 
 @observer
@@ -52,8 +52,9 @@ export class Product extends Component<any, any> {
                                     <p>类型:精品课程</p>
                                     <p>课程介绍:{item.content}</p>
                                 </div>
-                                <div onClick={this.onClick(item.item_id)} className={style.pricingTerms}>
-                                    <a className="btn btn-medium">立即购买</a>
+                                <div className={style.pricingTerms}>
+                                    <p>5999.00元/季度</p>
+                                    <Button type={'primary'} onClick={this.onClick(item.item_id)} >立即购买</Button>
                                 </div>
                             </div>
                         ))
