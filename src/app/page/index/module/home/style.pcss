@@ -9,121 +9,36 @@
 .banner {
     height: 520px;
     & img {
-        height: 520px;
+        height: 440px;
         width: 100%;
     }
 
 }
 
-.testimonial {
-    width: 100%;
-    background: #fff;
-    height: 256px;
-    & h3 {
-        padding: 30px;
-        text-align: center;
-        font-size: 24px;
-    }
-    & .testimonialCar {
-        width: 60%;
-        margin: 0 auto;
-        & img {
-            height: 130px;
-            width: 100%;
-        }
-    }
+.classTop {
+    margin-top: 47px;
 }
 
-.Team {
-    width: 100%;
-    background: #E0E0E0;
-    height: 496px;
-    & h3 {
-        padding: 30px;
-        text-align: center;
-        font-size: 24px;
-    }
-    & .TeamDiv {
-        width: 60%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        & .TeamDivItem {
-            & .TeamDivItemIcon{
-                width: 99%;
-                margin: 0 auto;
-                padding: 20px 20px;
-                & h4{
-                    font-size: 15px;
-                    font-weight: bold;
-                    margin-bottom: 20px;
-                }
-            }
-            background: #fff;
-            text-align: center;
-        }
-    }
+.classTop .clThetitP {
+    height: 30px;
+    line-height: 30px;
+    margin-left: 18px;
+    border-bottom: 1px solid #c7c7c7;
+}
+.classTop .clThetit {
+    font-size: 22px;
+    display: inline-block;
+    line-height: 30px;
+    /* border-bottom: 2px solid #fe2b2b; */
+    margin-top: -2px;
 }
 
-.Icon1{
-    display: block;
-    font-size: 54px;
-    color: #0b9ff3;
-    margin-bottom: 36px;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-}
-.Icon1:before {
-    content: "\f047";
+
+.all{
+    display: flex;
+    flex-direction: column;
 }
 
-.Icon2{
-    display: block;
-    font-size: 54px;
-    color: #0b9ff3;
-    margin-bottom: 36px;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-}
-.Icon2:before {
-    content: "\f13c";
-}
-
-.Icon3{
-    display: block;
-    font-size: 54px;
-    color: #0b9ff3;
-    margin-bottom: 36px;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-}
-.Icon3:before {
-    content: "\f0eb";
-}
-
-.Icon4{
-    display: block;
-    font-size: 54px;
-    color: #0b9ff3;
-    margin-bottom: 36px;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-}
-.Icon4:before {
-    content: "\f108";
-}
 .bannertitle {
     position: absolute;
     text-align: center;
@@ -134,5 +49,34 @@
     line-height: 1.6rem;
     overflow: hidden;
 }
+.homeBoxItem{
+    width: 320px;
+    height: 190px;
+    float: left;
+    display: inline-block;
+    margin-bottom: 30px;
 
+    & .homeHeading {
+        width: 30%;
+        display: inline-block;
+        & img {
 
+            width: 320px;
+            height: 190px;
+        }
+    }
+
+}
+.hometext {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.commonmid {
+    width: 60%;
+    margin: 0px auto;
+    overflow: hidden;
+}

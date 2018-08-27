@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {observer} from 'mobx-react'
-import {Carousel} from 'antd';
+import {Carousel, Button} from 'antd';
 import * as style from "./style.pcss";
-import Team from './team'
 import {Footer} from 'component/footer'
-import {Button} from 'antd'
+import {store} from "./store";
+
 
 @observer
 export default class Home extends Component<any, any> {
@@ -25,7 +25,6 @@ export default class Home extends Component<any, any> {
                 <Testimonial/>
                 <Button onClick={this.detailClick}>查看详情</Button>
                 <Button onClick={this.moreClick}>更多</Button>
-                <Team/>
                 <Footer/>
             </div>
         )
@@ -40,12 +39,14 @@ export class Banner extends Component<any, any> {
 
             <div style={{width: '100%'}}>
                 <Carousel className={style.banner} autoplay={false}>
-                    <div style={{position: "relative"}}>
-                        <img src={require('./images/bg_header.jpg')}/>
-                        <h1 className={style.bannertitle}>商务信息咨询</h1>
+                    <div >
+                        <img src={require('./images/two.jpg')}/>
                     </div>
                     <div>
-                        <img src={require('./images/bg_header.jpg')}/>
+                        <img src={require('./images/one.jpg')}/>
+                    </div>
+                    <div>
+                        <img src={require('./images/three.jpg')}/>
                     </div>
                 </Carousel>
             </div>
@@ -55,18 +56,39 @@ export class Banner extends Component<any, any> {
 
 @observer
 export class Testimonial extends Component<any, any> {
+    constructor() {
+        super();
+        store.load()
+    }
+    // 立即购买
+    public onClick = (id) => {
+        return () => {
+            // this.props.history.push(`/business/detail/${id}`);
+            const redirectUrl = process.env.REDIRECT_URL;
+            window.location.href = redirectUrl + "pay.html#/?id=" + id;
+        }
+
+    }
     public render() {
         return (
-            <div className={style.testimonial}>
-                <h3>Client Testimonial</h3>
-                <Carousel className={style.testimonialCar} autoplay={true}>
-                    <div>
-                        <img src={require('./images/bg_header.jpg')}/>
-                    </div>
-                    <div>
-                        <img src={require('./images/one.jpg')}/>
-                    </div>
-                </Carousel>
+            <div className={style.commonmid}>
+                <div className={style.classTop}>
+                    <p className={style.clThetitP} >
+                        <span className={style.clThetit}>精品课程</span>
+                    </p>
+                </div>
+                <div className={style.all}>
+                    {
+                        store.list.map((item) => (
+                            <div  className={style.homeBoxItem}>
+                                <div className={style.homeHeading}>
+                                    <img src={item.img}/>
+                                </div>
+                                <h1>{item.title}</h1>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         )
     }
