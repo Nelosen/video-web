@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {observer} from 'mobx-react'
 import * as styles from "./style.pcss";
-import {Footer} from 'component/footer'
+// import {Footer} from 'component/footer'
 import {store} from "./store";
 import {Form, Icon, Input, Button, Checkbox} from 'antd';
 
@@ -14,7 +14,6 @@ export default class About extends Component<any, any> {
         return (
             <div>
                 <Left/>
-                <Footer/>
             </div>
         )
     }
@@ -63,7 +62,7 @@ export class Left extends Component<any, any> {
                     store.isLogIn ?
                         <div className={styles.defaultInf}>
                             <div className={styles.left}>
-                                <h1> <Icon type={'user'} />账户设置</h1>
+                                <h1><Icon type={'user'}/>账户设置</h1>
                                 <p className={store.flag === 1 ? styles.active : styles.default1}
                                    onClick={this.base}>基本信息</p>
                                 <p className={store.flag === 2 ? styles.active : styles.default1}
@@ -82,16 +81,16 @@ export class Left extends Component<any, any> {
                                                 <div>
                                                     <span>邮箱</span> <span>{store.defaultUserInf.email}</span>
                                                 </div>
-                                                <div>
-                                                    <span>注册时间</span>
-                                                    <span>
-                                            {
-                                                store.defaultUserInf.gmt_create !== undefined ?
-                                                    moment(parseInt(store.defaultUserInf.gmt_create) * 1000).format('YYYY-MM-DD') :
-                                                    null
-                                            }
-                                        </span>
-                                                </div>
+                                                {/*<div>*/}
+                                                {/*<span>注册时间</span>*/}
+                                                {/*<span>*/}
+                                                {/*{*/}
+                                                {/*store.defaultUserInf.gmt_create !== undefined ?*/}
+                                                {/*moment(parseInt(store.defaultUserInf.gmt_create) * 1000).format('YYYY-MM-DD') :*/}
+                                                {/*null*/}
+                                                {/*}*/}
+                                                {/*</span>*/}
+                                                {/*</div>*/}
                                             </div>
                                         </div>
 
@@ -124,30 +123,43 @@ export class Left extends Component<any, any> {
                                         {/*</div>*/}
                                     </div> :
                                     <div className={styles.defaultInfDiv}>
-                                        <div style={{margin:30}}>
+                                        <div style={{margin: 30}}>
                                             <p className={styles.defaultInfDivSpan11}>我的账户余额：0.0 金豆</p>
                                             <span className={styles.defaultInfDivSpan11}>充值金额：<input/>元</span>
 
-                                            <form id={'form'} action={'http://testapi.youfudata.cn/gate/gw/pay'} method="post">
-                                                <input name={"sp_id"} type={"text"} value={"1008"} style={{display: 'none'}}/>
-                                                <input name={"mch_id"} type={"text"} value={"100870000000004"} style={{display: 'none'}}/>
-                                                <input name={"out_trade_no"} type={"text"} value={"orderNum"} style={{display: 'none'}}/>
-                                                <input name={"bank_code"} type={"text"} value={"orderNum"} style={{display: 'none'}}/>
-                                                <input name={"goods_name"} type={"text"} value={"商城商品组合"} style={{display: 'none'}}/>
-                                                <input name={"notify_url"} type={"text"} value={"http://168.168.168.168/test1/"}
+                                            <form id={'form'} action={'http://testapi.youfudata.cn/gate/gw/pay'}
+                                                  method="post">
+                                                <input name={"sp_id"} type={"text"} value={"1008"}
+                                                       style={{display: 'none'}}/>
+                                                <input name={"mch_id"} type={"text"} value={"100870000000004"}
+                                                       style={{display: 'none'}}/>
+                                                <input name={"out_trade_no"} type={"text"} value={"orderNum"}
+                                                       style={{display: 'none'}}/>
+                                                <input name={"bank_code"} type={"text"} value={"orderNum"}
+                                                       style={{display: 'none'}}/>
+                                                <input name={"goods_name"} type={"text"} value={"商城商品组合"}
+                                                       style={{display: 'none'}}/>
+                                                <input name={"notify_url"} type={"text"}
+                                                       value={"http://168.168.168.168/test1/"}
                                                        style={{display: 'none'}}/>
                                                 <input name={"call_back_url"} type={"text"}
                                                        value={"'http://47.100.169.140:9911/order/paysuccess?price=' + c + checkPrice*100 "}
                                                        style={{display: 'none'}}/>
-                                                <input name={"total_fee"} type={"text"} value={"checkPrice*100"} style={{display: 'none'}}/>
-                                                <input name={"card_type"} type={"text"} value={"DEBIT"} style={{display: 'none'}}/>
+                                                <input name={"total_fee"} type={"text"} value={"checkPrice*100"}
+                                                       style={{display: 'none'}}/>
+                                                <input name={"card_type"} type={"text"} value={"DEBIT"}
+                                                       style={{display: 'none'}}/>
 
-                                                <input name={"user_type"} type={"text"} value={"1"} style={{display: 'none'}}/>
-                                                <input name={"channel"} type={"text"} value={"1"} style={{display: 'none'}}/>
-                                                <input name={"nonce_str"} type={"text"} value={"6161532897"} style={{display: 'none'}}/>
-                                                <input name={"sign"} type={"text"} value={"sign"} style={{display: 'none'}}/>
+                                                <input name={"user_type"} type={"text"} value={"1"}
+                                                       style={{display: 'none'}}/>
+                                                <input name={"channel"} type={"text"} value={"1"}
+                                                       style={{display: 'none'}}/>
+                                                <input name={"nonce_str"} type={"text"} value={"6161532897"}
+                                                       style={{display: 'none'}}/>
+                                                <input name={"sign"} type={"text"} value={"sign"}
+                                                       style={{display: 'none'}}/>
 
-                                                <input className={styles.submit} type="submit"  value="马上充值"/>
+                                                <input className={styles.submit} type="submit" value="马上充值"/>
                                             </form>
 
 
