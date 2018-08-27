@@ -13,6 +13,12 @@ class Store {
     @observable public purchased_list: any = [];
     @observable public loading = false;
     @observable public isLog = false;
+    @observable public flag = 1;
+
+    @action
+    public changeFlag = (v) => {
+        this.flag = v;
+    };
     @action
     public changeIsLog = (username) => {
         this.isLog = username;

@@ -10,3 +10,8 @@ export const defaultInfTh: string;
 export const defaultInfTd: string;
 export const defaultInfTh1: string;
 export const defaultInfTd1: string;
+export const left: string;
+export const active: string;
+export const default1: string;
+export const defaultInfDivSpan11: string;
+export const submit: string;

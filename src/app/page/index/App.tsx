@@ -94,7 +94,7 @@ export default class App extends Component<any, any> {
                                         />
                                     </Content>
                                     <Footer style={{textAlign: 'center',background:'#060a1b',color:'#777',fontSize:12}}>
-                                        Copyright © 2017-2018 广锦商务，苏ICP备18027413号-2 All Rights Reserved
+                                        鄂ICP备14010830号-1 监督邮件:3464055169@qq.com ©right;2014-2018 未经书面授权禁止复制或建立镜像 站长统计
                                     </Footer>
                                 </Layout>
                             </Switch>
