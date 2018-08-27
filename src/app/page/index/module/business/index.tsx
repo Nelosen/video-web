@@ -17,7 +17,7 @@ export default class Business extends Component<any, any> {
         return (
             <div style={{background: '#fff'}}>
                 111
-                <Product />
+                <Product {...this.props} />
                 <Footer/>
             </div>
         )
@@ -27,34 +27,44 @@ export default class Business extends Component<any, any> {
 @observer
 export class Product extends Component<any, any> {
 
-    public onClick = (id) => {
+    // 查看详细
+    public clickDetail = (id) => {
         return () => {
             this.props.history.push(`/business/detail/${id}`);
+        }
+    }
+
+    // 立即购买
+    public onClick = (id) => {
+        return () => {
+            // this.props.history.push(`/business/detail/${id}`);
+            const redirectUrl = process.env.REDIRECT_URL;
+            window.location.href = redirectUrl + "pay.html#/?id=" + id;
         }
 
     }
 
     public render() {
         return (
-            <div style={{width: '60%', margin: '0 auto'}}>
+            <div style={{width: '60%', margin: '100px auto'}}>
                 <div>
                     {
                         store.list.map((item) => (
-                            <div className={style.pricingBoxItem}>
+                            <div onClick={this.clickDetail(item.item_id)} className={style.pricingBoxItem}>
                                 <div className={style.pricingHeading}>
-                                    <img src ={item.img}/>
+                                    <img src={item.img}/>
                                 </div>
                                 <div className={style.pricingContainer}>
                                     <h1>{item.title}</h1>
-                                    <p>学院:{item.author}</p>
-                                    <p>讲师:{item.author}</p>
-                                    <p>课时:5   频次:5   周期:1</p>
+                                    <p>学院:骑牛摆渡</p>
+                                    <p>讲师:骑牛摆渡</p>
+                                    <p>课时:5 频次:5 周期:1</p>
                                     <p>类型:精品课程</p>
-                                    <p>课程介绍:{item.content}</p>
+                                    <p className={style.context}>课程介绍:{item.biz_custom_desc}</p>
                                 </div>
                                 <div className={style.pricingTerms}>
-                                    <p>5999.00元/季度</p>
-                                    <Button type={'primary'} onClick={this.onClick(item.item_id)} >立即购买</Button>
+                                    <p>{item.price / 100}元/季度</p>
+                                    <Button type={'primary'} onClick={this.onClick(item.item_id)}>立即购买</Button>
                                 </div>
                             </div>
                         ))

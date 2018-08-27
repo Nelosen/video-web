@@ -58,49 +58,29 @@ export class Left extends Component<any, any> {
     public render() {
         return (
             <div style={{width: '60%', margin: '0 auto'}}>
-                <Row gutter={24}>
-                    <Col className="gutter-row" xs={{span: 24}} sm={{span: 24}} xl={{span: 16}}>
-                        <div>
-                            <header className={style.pageHeader}>
 
-                                <div>
-                                    <h1 className={style.pageTitle}>{store.detailList.title}</h1>
-                                    <h3>业务介绍</h3>
-                                    <p>
-                                        <img src={require('./images/about.jpg')} alt=""
-                                             className={style.pullRight}
-                                             width="300"/>
-                                        广锦商务咨询有限公司为客户提供战略分析、战略选择、盈利模式设计、战略规划、战略保障体系设计、战略执行、战略评估、战略管理培训、细分的战略专题研究、战略突破行动、年度行动计划等服务，并致力于把战略管理的理念、知识、方法和工具传递给客户，促使客户内生相应的知识和能力。
-                                    </p>
-                                    <Button onClick={this.buy(store.id)} type={'primary'}>去购买</Button>
-                                </div>
-                            </header>
-                            <h3>公司理念</h3>
-                            <p>公司诚实守信，服务全国。公司为委托调查设立了硬性标准和工作要求。遵循原则是：事实说明一切，证据决定输赢，法律维护权益。职业操守是：受人之托，忠人之事。执行到位，遵纪守法。</p>
-                        </div>
-                    </Col>
-                    <Col className="gutter-row" xs={{span: 24}} sm={{span: 24}} xl={{span: 8}}>
-                        <div className={style.panel}>
-                            <h4>业务与服务</h4>
-                            <ul className={style.listUnstyled}>
-                                <li><a href="">营销咨询服务</a><br/>
-                                    <span>市场调查与营销体系诊断、内外部营销环境分析、营销战略规划、营销策略体系设计、渠道规划与管理、产品组合与定价策略制定等</span>
-                                </li>
-                                <li><a href="">品牌咨询服务</a><br/>
-                                    <span>行业分析和市场研究、品牌诊断和综合测评、品牌战略规划和制定（品牌定位 、品牌核心价值、品牌表现）、品牌形象设计等</span>
-                                </li>
-                                <li><a href="">精益生产管理咨询</a><br/>
-                                    <span>企业生产/服务水平综合调研诊断、5S/6S/7S现场改善咨询、TPM(全员生产保全）咨询、VSM(价值流图）咨询、SMED(快速换模..</span>
-                                </li>
-                                <li><a href="">战略咨询</a><br/>
-                                    <span>为客户提供战略分析、战略选择、盈利模式设计、战略规划、战略保障体系设计、战略执行、战略评估、战略管理培训、细分的战略专题研究、战略突破行动、年度行动计划等服务，并致力于把战略管理的理念、知识、方法和工具传递给客户，促使客户内生相应的知识和能力。</span>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </Col>
-                </Row>
+                <div className={style.pricingBoxItem}>
+                    <div className={style.pricingHeading}>
+                        <img src={store.detailList.img}/>
+                    </div>
+                    <div className={style.pricingContainer}>
+                        <h1>{store.detailList.title}</h1>
+                        <p>学院:骑牛摆渡</p>
+                        <p>讲师:骑牛摆渡</p>
+                        <p>课时:5 频次:5 周期:1</p>
+                        <p>类型:精品课程</p>
+                        <p className={style.context}>课程介绍:{store.detailList.biz_custom_desc}</p>
+                    </div>
+                    <div className={style.pricingTerms}>
+                        <p>{store.detailList.price / 100}元/季度</p>
+                        <Button type={'primary'} onClick={this.buy(store.id)} >立即购买</Button>
+                    </div>
+                </div>
             </div>
+
+
+
+
         )
     }
 }

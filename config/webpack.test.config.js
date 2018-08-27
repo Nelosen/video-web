@@ -29,7 +29,7 @@ config.plugins.unshift(
     new webpack.DefinePlugin({
         'process.env': {
             'NODE_ENV': JSON.stringify('test'),
-            'REDIRECT_URL': JSON.stringify('http://adminsytest.huala.com/')
+             REDIRECT_URL: JSON.stringify(publicPath)
         }
     })
 );

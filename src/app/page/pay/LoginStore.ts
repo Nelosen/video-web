@@ -43,6 +43,12 @@ export class LoginStore {
         })
 
     }
+
+    // 获取商品详情
+    @action
+    public getDetail = (id) => {
+        return loginApi.detail({model: {biz_id: 2, item_id: id}})
+    }
 }
 
 export const store = new LoginStore();

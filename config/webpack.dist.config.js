@@ -26,7 +26,7 @@ config.plugins.unshift(
     new webpack.DefinePlugin({
         'process.env': {
             'NODE_ENV': JSON.stringify('production'),
-            'REDIRECT_URL': JSON.stringify('http://adminhl.huala.com/newadmin/')
+             REDIRECT_URL: JSON.stringify(publicPath)
         }
     })
 );

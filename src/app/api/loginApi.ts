@@ -106,8 +106,8 @@ export class LoginApi {
             {
                 ...{
                     url: `${this.base2}/submit_buy`,
-                    method: 'post',
-                    data: params.data
+                    method: 'get',
+                    params: params.data
                 },
                 ...option
             }
