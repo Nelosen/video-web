@@ -46,7 +46,6 @@ export class Product extends Component<any, any> {
                 }
             });
         }
-
     }
 
     public render() {

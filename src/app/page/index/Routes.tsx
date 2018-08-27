@@ -21,7 +21,7 @@ export const routes: RouteList[] = [
             description: '',
             haveLeaf: true,
             id: 'contact',
-            name: '登录',
+            name: '个人中心',
             pid: '0',
             sort: 0,
             state: '',
