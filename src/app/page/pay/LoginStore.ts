@@ -28,6 +28,8 @@ export class LoginStore {
 
     @action
     public onSubmit = () => {
+       // form.submit();
+        document.getElementById('#form').onsubmit('');
 
         const loginData: any = {
             biz_id: 2,
