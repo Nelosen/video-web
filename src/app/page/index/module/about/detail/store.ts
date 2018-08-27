@@ -19,17 +19,11 @@ class Store {
         this.id = v
     }
 
-    // 判断是否已经登录
-    @action
-    public isUserInfo = () => {
 
-        return api.userInfo({model: {biz_id: '2'}})
-    };
-
-    // 获取商品详情
+    // 获取动态详情
     @action
     public getDetail = (id) => {
-        return api.detail({model: {biz_id: 2, item_id: id}})
+        return api.postDetail({model: {biz_id: 2, post_id: id}})
     }
 
 

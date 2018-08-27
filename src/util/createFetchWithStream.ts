@@ -1,8 +1,7 @@
- import * as Rx from 'rxjs/Rx'
+import * as Rx from 'rxjs/Rx'
 import _ from 'lodash'
 import {AxiosRequestConfig} from 'axios'
 import {Arg} from './Arg'
-
 
 export function createFetchWithStream<T>(option: AxiosRequestConfig = {}): Rx.Observable<T> {
 
@@ -24,7 +23,7 @@ export function axiosOptionFormat(option: AxiosRequestConfig): Rx.AjaxRequest {
     }
 
     if (sessionStorage.getItem('Token')) {
-         Object.assign(res.headers, {token: sessionStorage.getItem('Token')})
+        Object.assign(res.headers, {token: sessionStorage.getItem('Token')})
     }
 
     if (res.method === 'POST' || res.method === 'post' || res.method === 'PUT' || res.method === 'put') {
@@ -36,11 +35,11 @@ export function axiosOptionFormat(option: AxiosRequestConfig): Rx.AjaxRequest {
 
 function mapData(res: any) {
 
-  //  const redirectUrl = process.env.REDIRECT_URL;
+    // const redirectUrl = process.env.REDIRECT_URL;
 
     if (res.status === '401') {
-       // window.location.href = redirectUrl + '/login.html#/';
-       // sessionStorage.clear();
+        // window.location.href = redirectUrl + '/login.html#/';
+        // sessionStorage.clear();
         return null
     }
 
@@ -61,8 +60,9 @@ function mapData(res: any) {
         }
     } else {
         if (item.message) {
+
         }
-        data = [] as any;
+        data = item as any;
     }
     return data;
 }

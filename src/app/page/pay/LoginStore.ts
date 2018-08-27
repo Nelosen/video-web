@@ -30,7 +30,7 @@ export class LoginStore {
     public onSubmit = () => {
 
         const loginData: any = {
-            biz_id: 1,
+            biz_id: 2,
             item_id: this.id,
             remark: '1111'
         };

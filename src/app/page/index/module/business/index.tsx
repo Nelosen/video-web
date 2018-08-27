@@ -37,9 +37,14 @@ export class Product extends Component<any, any> {
     // 立即购买
     public onClick = (id) => {
         return () => {
-            // this.props.history.push(`/business/detail/${id}`);
             const redirectUrl = process.env.REDIRECT_URL;
-            window.location.href = redirectUrl + "pay.html#/?id=" + id;
+            store.isUserInfo().subscribe(data => {
+                if (data.success) {
+                    window.location.href = redirectUrl + "pay.html#/?id=" + id;
+                } else {
+                    this.props.history.push(`/user`);
+                }
+            });
         }
 
     }
@@ -50,8 +55,8 @@ export class Product extends Component<any, any> {
                 <div>
                     {
                         store.list.map((item) => (
-                            <div onClick={this.clickDetail(item.item_id)} className={style.pricingBoxItem}>
-                                <div className={style.pricingHeading}>
+                            <div className={style.pricingBoxItem}>
+                                <div onClick={this.clickDetail(item.item_id)} className={style.pricingHeading}>
                                     <img src={item.img}/>
                                 </div>
                                 <div className={style.pricingContainer}>

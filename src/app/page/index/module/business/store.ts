@@ -13,12 +13,17 @@ class Store {
         this.list = v
     }
 
+    // 判断是否已经登录
+    @action
+    public isUserInfo = () => {
+
+        return api.userInfo({model: {biz_id: '2'}})
+    };
 
     // 注册
     @action
     public load = () => {
         return api.list({model: {biz_id: 2, page: 1}}).subscribe(data => {
-             console.log(data.data)
             this.changeList(data.data);
             if (data.success) {
                 message.success(data.data);

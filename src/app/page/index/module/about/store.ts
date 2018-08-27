@@ -4,25 +4,22 @@ import {LoginApi} from "api/loginApi";
 const api = new LoginApi();
 
 class Store {
-    @ observable public id: any = 0;
     @ observable public flag: boolean = false;
-    @ observable public detailList: any = {};
+    @ observable public postList: any = [];
 
 
     @action
-    public changeFlag(v) {
-        this.flag = v
+    public changePostList(v) {
+        this.postList = v
     }
 
-    @action
-    public changeId(v) {
-        this.id = v
-    }
 
-    // 获取商品详情
+    // 获取实时动态列表
     @action
-    public getDetail = (id) => {
-        return api.detail({model: {biz_id: 1, item_id: id}})
+    public getList = () => {
+        return api.postList({model: {biz_id: 2, post_id: 1}}).subscribe(data => {
+            this.changePostList(data.data)
+        })
     }
 
 

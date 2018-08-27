@@ -104,11 +104,9 @@ class Store {
         return loginApi.login({data: loginData}).subscribe(data => {
             if (data.success) {
                 message.success(data.data);
-                this.load()
+                this.load();
                 this.onAccount();
-
-            }else{
-                message.error(data.message);
+                window.location.href = window.location.hostname + "/#/user";
             }
         })
 
@@ -121,7 +119,7 @@ class Store {
         loginApi.account({model: {biz_id: 2}}).subscribe(data => {
             if (data.success) {
                 this.defaultUserInf = data.data.user_info;
-                this.purchased_list = data.data.purchased_list;
+                this.purchased_list = data.data.purchased_list
                 this.changeIsLoginIn(true)
             }
         })

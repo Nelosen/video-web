@@ -48,6 +48,18 @@ export class LoginApi {
             }
         );
     };
+    public postDetail = (params: { model }, option = {}): ObservableType<any> => {
+        return createFetchWithStream<any>(
+            {
+                ...{
+                    url: `${this.base3}/detail`,
+                    method: 'get',
+                    params: params.model
+                },
+                ...option
+            }
+        );
+    };
 
     public list = (params: { model }, option = {}): ObservableType<any> => {
         return createFetchWithStream<any>(
