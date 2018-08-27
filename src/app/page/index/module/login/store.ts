@@ -106,7 +106,7 @@ class Store {
                 message.success(data.data);
                 this.load();
                 this.onAccount();
-                window.location.href = window.location.hostname + "/#/user";
+                window.location.href = window.location.hostname + "/#/back";
             }
         })
 

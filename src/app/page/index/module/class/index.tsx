@@ -30,7 +30,7 @@ export class Product extends Component<any, any> {
     // 查看详细
     public clickDetail = (id) => {
         return () => {
-            this.props.history.push(`/business/detail/${id}`);
+            this.props.history.push(`/class/detail/${id}`);
         }
     }
 
@@ -42,7 +42,7 @@ export class Product extends Component<any, any> {
                 if (data.success) {
                     window.location.href = redirectUrl + "pay.html#/?id=" + id;
                 } else {
-                    this.props.history.push(`/user`);
+                    this.props.history.push(`/back`);
                 }
             });
         }

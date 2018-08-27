@@ -42,7 +42,7 @@ export class Left extends Component<any, any> {
     // 查看详细
     public clickDetail = (id) => {
         return () => {
-            this.props.history.push(`/about/detail/${id}`);
+            this.props.history.push(`/news/detail/${id}`);
         }
     }
 

@@ -46,33 +46,33 @@ export default class App extends Component<any, any> {
                                     <Content style={{padding: '0 50px', marginTop: 64}}>
                                         <Route
                                             exact={true}
-                                            path='/user'
+                                            path='/back'
                                             render={props => <LazyLoad {...props}
-                                                                       component={System.import('./module/user')}/>}
+                                                                       component={System.import('./module/back')}/>}
                                         />
                                         <Route
                                             exact={true}
-                                            path='/business'
+                                            path='/class'
                                             render={props => <LazyLoad {...props}
-                                                                       component={System.import('./module/business')}/>}
+                                                                       component={System.import('./module/class')}/>}
                                         />
                                         <Route
                                             exact={true}
-                                            path='/business/detail/:id'
+                                            path='/class/detail/:id'
                                             render={props => <LazyLoad {...props}
-                                                                       component={System.import('./module/business/detail')}/>}
+                                                                       component={System.import('./module/class/detail')}/>}
                                         />
                                         <Route
                                             exact={true}
-                                            path='/about'
+                                            path='/news'
                                             render={props => <LazyLoad {...props}
-                                                                       component={System.import('./module/about')}/>}
+                                                                       component={System.import('./module/news')}/>}
                                         />
                                         <Route
                                             exact={true}
-                                            path='/about/detail/:id'
+                                            path='/news/detail/:id'
                                             render={props => <LazyLoad {...props}
-                                                                       component={System.import('./module/about/detail')}/>}
+                                                                       component={System.import('./module/news/detail')}/>}
                                         />
                                         <Route
                                             exact={true}
@@ -82,9 +82,9 @@ export default class App extends Component<any, any> {
                                         />
                                         <Route
                                             exact={true}
-                                            path='/contact'
+                                            path='/login'
                                             render={props => <LazyLoad {...props}
-                                                                       component={System.import('./module/contact')}/>}
+                                                                       component={System.import('./module/login')}/>}
                                         />
                                         <Route
                                             exact={true}

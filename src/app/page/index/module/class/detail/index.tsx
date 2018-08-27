@@ -55,7 +55,7 @@ export class Left extends Component<any, any> {
                 if (data.success) {
                     window.location.href = redirectUrl + "pay.html#/?id=" + id;
                 } else {
-                    this.props.history.push(`/user`);
+                    this.props.history.push(`/back`);
                 }
             });
         }

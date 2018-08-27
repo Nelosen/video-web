@@ -17,7 +17,7 @@ export interface RouteList {
 
 export const routes: RouteList[] = [
         {
-            path: '/contact',
+            path: '/login',
             description: '',
             haveLeaf: true,
             id: 'contact',
@@ -28,7 +28,7 @@ export const routes: RouteList[] = [
             type: 0,
             component: null,
         }, {
-            path: '/about',
+            path: '/news',
             description: '',
             haveLeaf: false,
             id: 'about',
@@ -38,7 +38,7 @@ export const routes: RouteList[] = [
             state: '',
         leaf:
             [{
-                path: '/about/detail/:id',
+                path: '/news/detail/:id',
                 description: '新增',
                 haveLeaf: false,
                 icon: 'mobile',
@@ -54,7 +54,7 @@ export const routes: RouteList[] = [
             type: 0,
             component: null,
         }, {
-            path: '/user',
+            path: '/back',
             description: '',
             haveLeaf: true,
             id: 'user',
@@ -66,7 +66,7 @@ export const routes: RouteList[] = [
             component: null,
         },
         {
-            path: '/business',
+            path: '/class',
             description: '',
             haveLeaf: false,
             id: 'business',
@@ -76,7 +76,7 @@ export const routes: RouteList[] = [
             state: '',
             leaf:
                 [{
-                    path: '/business/detail/:id',
+                    path: '/class/detail/:id',
                     description: '新增',
                     haveLeaf: false,
                     icon: 'mobile',

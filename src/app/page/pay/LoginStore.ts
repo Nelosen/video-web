@@ -36,7 +36,7 @@ export class LoginStore {
         };
         return loginApi.submit_buy({data: loginData}).subscribe(data => {
             if (data.success) {
-                window.location.href = window.location.hostname + "/#/user";
+                window.location.href = window.location.hostname + "/#/back";
             } else {
                 message.success(data.message);
             }
