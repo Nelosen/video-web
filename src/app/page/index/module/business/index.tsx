@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {observer} from 'mobx-react'
 import {store} from './store'
 import * as style from "./style.pcss";
-import {Row, Col} from 'antd';
+// import {Row, Col} from 'antd';
 import {Footer} from 'component/footer'
 
 @observer
@@ -16,15 +16,8 @@ export default class Business extends Component<any, any> {
     public render() {
         return (
             <div style={{background: '#fff'}}>
-                <div style={{width: "100%"}}>
-                    <img src={require('./images/banner.jpg')} style={{width: "100%", height: '200px'}}/>
-                </div>
-                <div className={style.business}>
-                    <p>欢迎来到广锦商务，我们竭诚为您服务</p>
-                    <p>Welcome to GuangJin</p>
-                </div>
-                <Product {...this.props}/>
-                <Bottom/>
+                111
+                <Product />
                 <Footer/>
             </div>
         )
@@ -45,34 +38,26 @@ export class Product extends Component<any, any> {
         return (
             <div style={{width: '60%', margin: '0 auto'}}>
                 <div>
-                    <Row gutter={16}>
-                        {
-                            store.list.map((item) => (
-                                <Col className="gutter-row" xs={{span: 24}} sm={{span: 24}} xl={{span: 6}}>
-                                    <div className={style.pricingBoxItem}>
-                                        <div className={style.pricingHeading}>
-                                            <h3><strong>{item.title}</strong></h3>
-                                        </div>
-                                        <div className={style.pricingTerms}>
-                                            <h6>{item.price / 100}元 / 次</h6>
-                                        </div>
-                                        <div className={style.pricingContainer}>
-                                            <ul>
-                                                <li>{JSON.parse(item.biz_custom_desc)[0]}</li>
-                                                <li>{JSON.parse(item.biz_custom_desc)[1]}</li>
-                                                <li>{JSON.parse(item.biz_custom_desc)[2]}</li>
-                                                <li>{JSON.parse(item.biz_custom_desc)[3]}</li>
-                                                <li>{JSON.parse(item.biz_custom_desc)[4]}</li>
-                                            </ul>
-                                        </div>
-                                        <div onClick={this.onClick(item.item_id)}  className={style.pricingAction}>
-                                            <a className="btn btn-medium">查看详情</a>
-                                        </div>
-                                    </div>
-                                </Col>
-                            ))
-                        }
-                    </Row>
+                    {
+                        store.list.map((item) => (
+                            <div className={style.pricingBoxItem}>
+                                <div className={style.pricingHeading}>
+                                    <img src ={item.img}/>
+                                </div>
+                                <div className={style.pricingContainer}>
+                                    <h1>{item.title}</h1>
+                                    <p>学院:{item.author}</p>
+                                    <p>讲师:{item.author}</p>
+                                    <p>课时:5   频次:5   周期:1</p>
+                                    <p>类型:精品课程</p>
+                                    <p>课程介绍:{item.content}</p>
+                                </div>
+                                <div onClick={this.onClick(item.item_id)} className={style.pricingTerms}>
+                                    <a className="btn btn-medium">立即购买</a>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         )

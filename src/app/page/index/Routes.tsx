@@ -55,7 +55,7 @@ export const routes: RouteList[] = [
         description: '',
         haveLeaf: false,
         id: 'business',
-        name: '服务&业务',
+        name: '精品课程',
         pid: '0',
         sort: 0,
         state: '',

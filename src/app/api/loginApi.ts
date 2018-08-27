@@ -33,6 +33,21 @@ export class LoginApi {
     private base = `${COLLECTION_FORMATS.api}/user`;
     private base1 = `${COLLECTION_FORMATS.api}/item`;
     private base2 = `${COLLECTION_FORMATS.api}/pay`;
+    private base3 = `${COLLECTION_FORMATS.api}/post`;
+
+
+    public postList = (params: { model }, option = {}): ObservableType<any> => {
+        return createFetchWithStream<any>(
+            {
+                ...{
+                    url: `${this.base3}/list`,
+                    method: 'get',
+                    params: params.model
+                },
+                ...option
+            }
+        );
+    };
 
     public list = (params: { model }, option = {}): ObservableType<any> => {
         return createFetchWithStream<any>(

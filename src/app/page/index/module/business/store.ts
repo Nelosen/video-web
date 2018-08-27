@@ -17,7 +17,8 @@ class Store {
     // 注册
     @action
     public load = () => {
-        return api.list({model: {biz_id: 1, page: '1', page_size: 20}}).subscribe(data => {
+        return api.postList({model: {biz_id: 2, post_id: 1}}).subscribe(data => {
+             console.log(data.data)
             this.changeList(data.data);
             if (data.success) {
                 message.success(data.data);
