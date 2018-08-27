@@ -1,0 +1,109 @@
+:root {
+    --primary-color: #1890ff;
+    --primary-1: #e6f7ff;
+}
+.trigger {
+    font-size: 20px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: all .3s;
+    padding: 0 24px;
+
+    &:hover {
+        background: var(--primary-1);
+    }
+}
+.right {
+    float: right;
+    margin: 10px 20px 0 0 ;
+    height: 100%;
+
+    .action {
+        cursor: pointer;
+        padding: 0 12px;
+        display: inline-block;
+        transition: all .3s;
+        height: 100%;
+        > i {
+            font-size: 16px;
+            vertical-align: middle;
+        }
+        &:global(.ant-popover-open),
+        &:hover {
+            background: var(--primary-1);
+        }
+    }
+    .search {
+        padding: 0;
+        margin: 0 12px;
+        &:hover {
+            background: transparent;
+        }
+    }
+    .account {
+        .avatar {
+            margin: 20px 8px 20px 0;
+            color: var(--primary-color);
+            background: rgba(69, 69, 69, .3);
+            vertical-align: middle;
+        }
+    }
+}
+
+.menu {
+    .menu_header {
+        padding: 6px 15px;
+        border-radius: 4px 4px 0 0;
+        border-bottom: 1px solid #e8e8e8;
+    }
+    .menu_info {
+        white-space: nowrap;
+        padding: 10px 15px;
+        line-height: 24px;
+    }
+    .menu_footer {
+        display: flex;
+        line-height: 24px;
+        border-top: 1px solid #e8e8e8;
+        span {
+            flex: 1;
+            padding: 4px 15px;
+            text-align: center;
+            &:hover {
+                background: var(--primary-1);
+            }
+        }
+    }
+}
+
+.logo {
+    height: 64px;
+    position: relative;
+    line-height: 64px;
+    padding-left: 24px;
+    transition: all .3s;
+    background: #001529;
+    overflow: hidden;
+    img {
+        display: inline-block;
+        vertical-align: middle;
+        height: 32px;
+    }
+    h1 {
+        color: #fff;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 20px;
+        margin: 0 0 0 10px;
+        font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+}
+
+.sider {
+    min-height: 100vh;
+    box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+    position: relative;
+    z-index: 10;
+}
+

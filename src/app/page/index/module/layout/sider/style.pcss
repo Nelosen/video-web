@@ -1,0 +1,40 @@
+.logo {
+    height: 64px;
+    position: relative;
+    line-height: 64px;
+    padding-left: 24px;
+    transition: all .3s;
+    background: #001529;
+    overflow: hidden;
+    img {
+        display: inline-block;
+        vertical-align: middle;
+        height: 32px;
+    }
+    h1 {
+        color: #fff;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 20px;
+        margin: 0 0 0 10px;
+        font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+}
+
+.side {
+    :global{
+        .ant-menu-item{
+            float: right;
+        }
+        .ant-menu{
+            line-height: 100px;
+        }
+        .nav-text{
+            background: none;
+        }
+        .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected, .ant-menu.ant-menu-dark .ant-menu-item-selected {
+            background:  none;
+        }
+    }
+}
