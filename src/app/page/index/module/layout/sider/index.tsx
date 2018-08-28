@@ -31,7 +31,7 @@ export class SiderBar extends Component<any, any> {
         return (
             <div className={style.side}>
                 {/*<img style={{position:'absolute'}} src ={require('')}/>*/}
-                <h1 style={{color:'#333',position:'absolute'}}>广锦商务</h1>
+                <h1 style={{color:'#333',position:'absolute'}}>长威投教</h1>
                 {/*<Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>*/}
                     {/*<Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />*/}
                 {/*</Button>*/}

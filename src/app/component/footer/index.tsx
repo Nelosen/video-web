@@ -10,6 +10,7 @@ export class Footer extends React.Component<any, any> {
             <div className={style.kcommWid}>
                 <div className={style.footernUpart}>
                     <div className={style.commWid}>
+                        <div className={style.nsplitLine}></div>
                         <div className={style.nftblock}>
                             <ul>
                                 <li className={style.abpTit}>关于我们</li>
@@ -18,7 +19,7 @@ export class Footer extends React.Component<any, any> {
                                 </li>
                             </ul>
                         </div>
-                        <div className={style.nsplitLine}></div>
+
                         <div className={style.nftb}>
                             <ul>
                                 <li className={style.abpTit}>联系我们</li>
