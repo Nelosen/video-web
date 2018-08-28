@@ -102,6 +102,7 @@ class Store {
                 message.success(data.data);
                 this.changeIsLog(true)
             }else{
+                console.log(data)
                 message.error(data.message);
             }
         })
