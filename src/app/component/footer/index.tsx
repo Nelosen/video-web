@@ -23,9 +23,10 @@ export class Footer extends React.Component<any, any> {
                             <ul>
                                 <li className={style.abpTit}>联系我们</li>
                                 <li className={style.awra}>客服热线</li>
-                                <li className={style.aline}>18148585548</li>
+                                <li className={style.aline}>13237977435</li>
                                 <li className={style.awra}>在线咨询</li>
-                                <li className={style.awra}>QQ:2640074370(09:00-17:30)</li>
+                                <li className={style.awra}>QQ:3346929454(09:00-17:30)</li>
+                                <li className={style.awra}>珠海市横琴新区宝华路6号</li>
                             </ul>
                         </div>
                     </div>
