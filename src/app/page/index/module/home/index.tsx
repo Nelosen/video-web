@@ -26,7 +26,7 @@ export class Banner extends Component<any, any> {
         return (
 
             <div style={{width: '100%'}}>
-                <Carousel className={style.banner} autoplay={false}>
+                <Carousel className={style.banner} autoplay={true} dots={true}>
                     <div>
                         <img src={require('./images/two.jpg')}/>
                     </div>

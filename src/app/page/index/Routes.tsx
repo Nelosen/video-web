@@ -17,7 +17,7 @@ export interface RouteList {
 
 export const routes: RouteList[] = [
         {
-            path: '/login',
+            path: '/login/:id',
             description: '',
             haveLeaf: true,
             id: 'contact',

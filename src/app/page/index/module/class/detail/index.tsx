@@ -50,12 +50,13 @@ export class Left extends Component<any, any> {
 
     public buy = (id) => {
         return () => {
-            const redirectUrl = process.env.REDIRECT_URL;
+            // const redirectUrl = process.env.REDIRECT_URL;
             store.isUserInfo().subscribe(data => {
                 if (data.success) {
-                    window.location.href = redirectUrl + "pay.html#/?id=" + id;
+                    // window.location.href = redirectUrl + "pay.html#/?id=" + id;
+                    this.props.history.push(`/login/${id}`);
                 } else {
-                    this.props.history.push(`/back`);
+                    this.props.history.push(`/login/${id}`);
                 }
             });
         }

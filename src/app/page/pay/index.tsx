@@ -39,7 +39,7 @@ class Login1 extends React.Component<any, LoginState> {
                 <div className={styles.topLog} style={{padding: 20}}>{}
                 </div>
 
-                <form id={'form'} action={'http://testapi.youfudata.cn/gate/gw/pay'} method="post">
+                <form id={'form'} action={'http://api8test.wrshp.cn/gate/gw/pay'} method="post">
                     <div style={{width: 800, margin: '0 auto', textAlign: 'center'}}>
                         <p style={{fontSize: 38, color: '#333'}}>咨询服务在线购买</p>
                         <p style={{fontSize: 18, color: '#333'}}>感谢您选择我们，我们承诺为客户带来高效，便捷的咨询服务。为客户解决实际烦恼</p>

@@ -13,7 +13,19 @@ class Store {
     @observable public purchased_list: any = [];
     @observable public loading = false;
     @observable public isLog = false;
-    @observable public flag = 1;
+    @observable public flag = 2;
+    @observable public itemId = 0;
+    @observable public sum = 0;
+
+    @action
+    public changeSum = (v) => {
+        this.sum = v;
+    };
+
+    @action
+    public changeItemId = (v) => {
+        this.itemId = v;
+    };
 
     @action
     public changeFlag = (v) => {
@@ -127,6 +139,27 @@ class Store {
                 this.defaultUserInf = data.data.user_info;
                 this.purchased_list = data.data.purchased_list
                 this.changeIsLoginIn(true)
+            }
+        })
+
+    }
+
+    // 购买商品
+    @action
+    public toBuy = (id) => {
+        // form.submit();
+        //  document.getElementById('#form').onsubmit('');
+
+        const loginData: any = {
+            biz_id: 2,
+            item_id: id,
+            remark: '1111'
+        };
+        return loginApi.submit_buy({data: loginData}).subscribe(data => {
+            if (data.success) {
+                window.location.href = window.location.hostname + "/#/back";
+            } else {
+                message.success(data.message);
             }
         })
 

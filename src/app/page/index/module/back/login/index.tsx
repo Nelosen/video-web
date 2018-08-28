@@ -38,7 +38,7 @@ export class Login extends React.Component<any, LoginState> {
         return (
             <div>
                 <div className={styles.defaultInf}>
-                    <h1 style={{color: '#629aa9'}}>Tables</h1>
+                    {/*<h1 style={{color: '#629aa9'}}>Tables</h1>*/}
                     <div className={styles.defaultInfDiv}>
                         {/*<div className={styles.defaultInfDivSpan}>*/}
                             {/*<span className={styles.defaultInfDivSpan1}>个人信息表:</span>*/}
@@ -61,7 +61,7 @@ export class Login extends React.Component<any, LoginState> {
                         {/*</div>*/}
 
                         <div className={styles.defaultInfDivSpan}>
-                            <span className={styles.defaultInfDivSpan1}>已购买:</span>
+                            <span style={{color: '#629aa9'}} className={styles.defaultInfDivSpan1}>已购买:</span>
                             <div className={styles.defaultInfTh1}>
                                 <span>商品名</span>
                                 <span>商品价格</span>

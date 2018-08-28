@@ -10,6 +10,10 @@ const FormItem = Form.Item;
 @observer
 export default class About extends Component<any, any> {
 
+    public componentWillMount(){
+        store.changeItemId(this.props.match.params.id)
+    }
+
     public render() {
         return (
             <div>
@@ -53,6 +57,13 @@ export class Left extends Component<any, any> {
         store.changeFlag(2)
     }
 
+    public pay = () => {
+        store.toBuy(store.itemId)
+    }
+
+    public onChange = (e) => {
+        store.changeSum(e.target.value)
+    }
     public render() {
         const {data} = store;
         return (
@@ -63,10 +74,10 @@ export class Left extends Component<any, any> {
                         <div className={styles.defaultInf}>
                             <div className={styles.left}>
                                 <h1><Icon type={'user'}/>账户设置</h1>
-                                <p className={store.flag === 1 ? styles.active : styles.default1}
-                                   onClick={this.base}>基本信息</p>
                                 <p className={store.flag === 2 ? styles.active : styles.default1}
                                    onClick={this.my}>我的账户</p>
+                                <p className={store.flag === 1 ? styles.active : styles.default1}
+                                   onClick={this.base}>基本信息</p>
                             </div>
 
                             {
@@ -125,17 +136,17 @@ export class Left extends Component<any, any> {
                                     <div className={styles.defaultInfDiv}>
                                         <div style={{margin: 30}}>
                                             <p className={styles.defaultInfDivSpan11}>我的账户余额：0.0 金豆</p>
-                                            <span className={styles.defaultInfDivSpan11}>充值金额：<input/>元</span>
+                                            <span className={styles.defaultInfDivSpan11}>充值金额：<input onChange={this.onChange}/>元</span>
 
-                                            <form id={'form'} action={'http://testapi.youfudata.cn/gate/gw/pay'}
+                                            <form id={'form'} action={'http://api8test.wrshp.cn/gate/gw/pay'}
                                                   method="post">
                                                 <input name={"sp_id"} type={"text"} value={"1008"}
                                                        style={{display: 'none'}}/>
                                                 <input name={"mch_id"} type={"text"} value={"100870000000004"}
                                                        style={{display: 'none'}}/>
-                                                <input name={"out_trade_no"} type={"text"} value={"orderNum"}
+                                                <input name={"out_trade_no"} type={"text"} value={"01050000"}
                                                        style={{display: 'none'}}/>
-                                                <input name={"bank_code"} type={"text"} value={"orderNum"}
+                                                <input name={"bank_code"} type={"text"} value={"01050000"}
                                                        style={{display: 'none'}}/>
                                                 <input name={"goods_name"} type={"text"} value={"商城商品组合"}
                                                        style={{display: 'none'}}/>
@@ -145,7 +156,7 @@ export class Left extends Component<any, any> {
                                                 <input name={"call_back_url"} type={"text"}
                                                        value={"'http://47.100.169.140:9911/order/paysuccess?price=' + c + checkPrice*100 "}
                                                        style={{display: 'none'}}/>
-                                                <input name={"total_fee"} type={"text"} value={"checkPrice*100"}
+                                                <input name={"total_fee"} type={"text"} value={store.sum}
                                                        style={{display: 'none'}}/>
                                                 <input name={"card_type"} type={"text"} value={"DEBIT"}
                                                        style={{display: 'none'}}/>
@@ -159,7 +170,7 @@ export class Left extends Component<any, any> {
                                                 <input name={"sign"} type={"text"} value={"sign"}
                                                        style={{display: 'none'}}/>
 
-                                                <input className={styles.submit} type="submit" value="马上充值"/>
+                                                <input className={styles.submit} onClick={this.pay} type="submit" value="马上充值"/>
                                             </form>
 
 
@@ -250,7 +261,7 @@ export class Left extends Component<any, any> {
                                                     </Button>
                                                     <Checkbox
                                                     >
-                                                        <span>我已阅读并同意<a onClick={this.goto}>《广锦商务注册协议》</a></span>
+                                                        <span>我已阅读并同意<a onClick={this.goto}>《长威投教注册协议》</a></span>
                                                     </Checkbox>
                                                     <p style={{textAlign: 'center'}}><span>已有账号</span><a
                                                         onClick={this.loginOut}>登陆</a></p>
