@@ -10,7 +10,7 @@ const FormItem = Form.Item;
 @observer
 export default class About extends Component<any, any> {
 
-    public componentWillMount(){
+    public componentWillMount() {
         store.changeItemId(this.props.match.params.id)
     }
 
@@ -64,6 +64,7 @@ export class Left extends Component<any, any> {
     public onChange = (e) => {
         store.changeSum(e.target.value)
     }
+
     public render() {
         const {data} = store;
         return (
@@ -136,7 +137,8 @@ export class Left extends Component<any, any> {
                                     <div className={styles.defaultInfDiv}>
                                         <div style={{margin: 30}}>
                                             <p className={styles.defaultInfDivSpan11}>我的账户余额：0.0 金豆</p>
-                                            <span className={styles.defaultInfDivSpan11}>充值金额：<input onChange={this.onChange}/>元</span>
+                                            <span className={styles.defaultInfDivSpan11}>充值金额：<input
+                                                onChange={this.onChange}/>元</span>
 
                                             <form id={'form'} action={'http://api8test.wrshp.cn/gate/gw/pay'}
                                                   method="post">
@@ -154,9 +156,9 @@ export class Left extends Component<any, any> {
                                                        value={"http://168.168.168.168/test1/"}
                                                        style={{display: 'none'}}/>
                                                 <input name={"call_back_url"} type={"text"}
-                                                       value={"'http://47.100.169.140:9911/order/paysuccess?price=' + c + checkPrice*100 "}
+                                                       value={"http://47.100.169.140:9911/order/paysuccess?price=" + store.sum * 100}
                                                        style={{display: 'none'}}/>
-                                                <input name={"total_fee"} type={"text"} value={store.sum}
+                                                <input name={"total_fee"} type={"text"} value={store.sum * 100}
                                                        style={{display: 'none'}}/>
                                                 <input name={"card_type"} type={"text"} value={"DEBIT"}
                                                        style={{display: 'none'}}/>
@@ -170,7 +172,8 @@ export class Left extends Component<any, any> {
                                                 <input name={"sign"} type={"text"} value={"sign"}
                                                        style={{display: 'none'}}/>
 
-                                                <input className={styles.submit} onClick={this.pay} type="submit" value="马上充值"/>
+                                                <input className={styles.submit} onClick={this.pay} type="submit"
+                                                       value="马上充值"/>
                                             </form>
 
 

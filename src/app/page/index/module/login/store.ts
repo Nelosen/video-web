@@ -15,7 +15,7 @@ class Store {
     @observable public isLog = false;
     @observable public flag = 2;
     @observable public itemId = 0;
-    @observable public sum = 0;
+    @observable public sum = 1;
 
     @action
     public changeSum = (v) => {
