@@ -12,6 +12,7 @@ const root = path.join(__dirname, '../', '/');
 const serverPath = path.join(root, 'src/server');
 const outputPath = path.join(root, 'build');
 const config = require('./webpack.base.config');
+const { publicPath } = require('./debugConfig');
 
 config.output = {
     path: outputPath,

@@ -11,6 +11,7 @@ const {entry, template} = require('./entry');
 const root = path.join(__dirname, '../', '/');
 const outputPath = path.join(root, 'build');
 const config = require('./webpack.base.config');
+const { publicPath } = require('./debugConfig');
 
 config.output = {
     path: outputPath,
