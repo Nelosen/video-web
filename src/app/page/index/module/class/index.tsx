@@ -16,7 +16,6 @@ export default class Business extends Component<any, any> {
     public render() {
         return (
             <div style={{background: '#fff'}}>
-                111
                 <Product {...this.props} />
                 <Footer/>
             </div>
@@ -40,38 +39,36 @@ export class Product extends Component<any, any> {
             // const redirectUrl = process.env.REDIRECT_URL;
             store.isUserInfo().subscribe(data => {
                 this.props.history.push(`/login/${id}`);
-                // if (data.success) {
-                //     // window.location.href = redirectUrl + "pay.html#/?id=" + id;
-                //     this.props.history.push(`/login/${id}`);
-                // } else {
-                //     this.props.history.push(`/login/${id}`);
-                // }
             });
         }
     }
 
     public render() {
         return (
-            <div style={{width: '60%', margin: '100px auto'}}>
+            <div style={{width: '60%', margin: '120px auto'}}>
                 <div>
                     {
                         store.list.map((item) => (
                             <div className={style.pricingBoxItem}>
-                                <div onClick={this.clickDetail(item.item_id)} className={style.pricingHeading}>
-                                    <img src={item.img}/>
-                                </div>
-                                <div className={style.pricingContainer}>
-                                    <h1>{item.title}</h1>
-                                    <p>学院:骑牛摆渡</p>
-                                    <p>讲师:骑牛摆渡</p>
-                                    <p>课时:5 频次:5 周期:1</p>
-                                    <p>类型:精品课程</p>
-                                    <p className={style.context}>课程介绍:{item.biz_custom_desc}</p>
-                                </div>
-                                <div className={style.pricingTerms}>
-                                    <p>{item.price / 100}元/季度</p>
-                                    <Button type={'primary'} onClick={this.onClick(item.item_id)}>立即购买</Button>
-                                </div>
+
+                                        <div onClick={this.clickDetail(item.item_id)} className={style.pricingHeading}>
+                                            <img src={item.img}/>
+                                        </div>
+
+                                        <div className={style.pricingContainer}>
+                                            <h1>{item.title}</h1>
+                                            <p>学院:骑牛摆渡</p>
+                                            <p>讲师:骑牛摆渡</p>
+                                            <p>课时:5 频次:5 周期:1</p>
+                                            <p>类型:精品课程</p>
+                                            <p className={style.context}>课程介绍:{item.biz_custom_desc}</p>
+                                        </div>
+
+                                        <div className={style.pricingTerms}>
+                                            <p>{item.price / 100}元/季度</p>
+                                            <Button type={'primary'} onClick={this.onClick(item.item_id)}>立即购买</Button>
+                                        </div>
+
                             </div>
                         ))
                     }

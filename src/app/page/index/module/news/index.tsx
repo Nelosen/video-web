@@ -51,16 +51,17 @@ export class Left extends Component<any, any> {
             <div style={{width: '60%', margin: '120px auto'}}>
                 {
                     store.postList.map((item) => (
+
                         <div onClick={this.clickDetail(item.post_id)} className={style.pricingBoxItem}>
-                            <div className={style.pricingHeading}>
-                                <img src={item.img}/>
-                            </div>
-                            <div className={style.pricingContainer}>
-                                <h1>{item.title}</h1>
-                                <i>{moment(parseInt(item.gmt_create) * 1000).format('YYYY-MM-DD')}</i>
-                                <p className={style.context}>{item.content}</p>
-                            </div>
-                        </div>
+                                    <div className={style.pricingHeading}>
+                                        <img src={item.img}/>
+                                    </div>
+                                    <div className={style.pricingContainer}>
+                                        <h1>{item.title}</h1>
+                                        <i>{moment(parseInt(item.gmt_create) * 1000).format('YYYY-MM-DD')}</i>
+                                        <p className={style.context}>{item.content}</p>
+                                    </div>
+                                </div>
                     ))
                 }
             </div>
