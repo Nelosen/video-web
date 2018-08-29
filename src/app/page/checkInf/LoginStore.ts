@@ -1,6 +1,6 @@
 import {observable, action} from 'mobx';
 import {LoginApi} from "api/loginApi";
-import {message} from 'antd';
+// import {message} from 'antd';
 
 const loginApi = new LoginApi();
 
@@ -38,7 +38,7 @@ export class LoginStore {
             if (data.success) {
                 window.location.href = window.location.hostname + "/#/back";
             } else {
-                message.success(data.message);
+               // message.success(data.message);
             }
         })
 

@@ -2,6 +2,7 @@ import * as Rx from 'rxjs/Rx'
 import _ from 'lodash'
 import {AxiosRequestConfig} from 'axios'
 import {Arg} from './Arg'
+import {message} from "antd";
 
 export function createFetchWithStream<T>(option: AxiosRequestConfig = {}): Rx.Observable<T> {
 
@@ -60,7 +61,7 @@ function mapData(res: any) {
         }
     } else {
         if (item.message) {
-
+            message.error(item.message)
         }
         data = item as any;
     }

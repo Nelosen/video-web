@@ -20,14 +20,12 @@
 }
 
 .pricingBoxItem {
-    position: relative;
-    height: 290px;
+    overflow: hidden;
     & .pricingHeading {
-        width: 50%;
+        width: 550px;
         display: inline-block;
+        float: left;
         & img {
-            position: absolute;
-            top: 0;
             width: 550px;
             height: 290px;
         }
@@ -35,7 +33,9 @@
 
     & .pricingContainer {
         height: 290px;
-        width: 50%;
+        width: 300px;
+        float: left;
+        margin-left: 20px;
         display: inline-block;
         & h1 {
             color: #020202;

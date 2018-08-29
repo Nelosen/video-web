@@ -50,24 +50,23 @@ export class Product extends Component<any, any> {
                     {
                         store.list.map((item) => (
                             <div className={style.pricingBoxItem}>
+                                <div onClick={this.clickDetail(item.item_id)} className={style.pricingHeading}>
+                                    <img src={item.img}/>
+                                </div>
 
-                                        <div onClick={this.clickDetail(item.item_id)} className={style.pricingHeading}>
-                                            <img src={item.img}/>
-                                        </div>
+                                <div className={style.pricingContainer}>
+                                    <h1>{item.title}</h1>
+                                    <p>学院:骑牛摆渡</p>
+                                    <p>讲师:骑牛摆渡</p>
+                                    <p>课时:5 频次:5 周期:1</p>
+                                    <p>类型:精品课程</p>
+                                    <p className={style.context}>课程介绍:{item.biz_custom_desc}</p>
+                                </div>
 
-                                        <div className={style.pricingContainer}>
-                                            <h1>{item.title}</h1>
-                                            <p>学院:骑牛摆渡</p>
-                                            <p>讲师:骑牛摆渡</p>
-                                            <p>课时:5 频次:5 周期:1</p>
-                                            <p>类型:精品课程</p>
-                                            <p className={style.context}>课程介绍:{item.biz_custom_desc}</p>
-                                        </div>
-
-                                        <div className={style.pricingTerms}>
-                                            <p>{item.price / 100}元/季度</p>
-                                            <Button type={'primary'} onClick={this.onClick(item.item_id)}>立即购买</Button>
-                                        </div>
+                                <div className={style.pricingTerms}>
+                                    <p>{item.price / 100}元/季度</p>
+                                    <Button type={'primary'} onClick={this.onClick(item.item_id)}>立即购买</Button>
+                                </div>
 
                             </div>
                         ))

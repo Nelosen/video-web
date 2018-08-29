@@ -1,6 +1,6 @@
 import {observable, action} from 'mobx'
 import {LoginApi} from "api/loginApi";
-import {message} from 'antd';
+// import {message} from 'antd';
 
 const api = new LoginApi();
 
@@ -26,7 +26,7 @@ class Store {
         return api.list({model: {biz_id: 2, page: 1}}).subscribe(data => {
             this.changeList(data.data);
             if (data.success) {
-                message.success(data.data);
+               // message.success(data.data);
 
             }
         })

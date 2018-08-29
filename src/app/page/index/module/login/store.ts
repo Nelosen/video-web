@@ -1,6 +1,6 @@
 import {observable, action} from 'mobx'
 import {LoginApi} from "api/loginApi";
-import {message} from 'antd';
+// import {message} from 'antd';
 
 const loginApi = new LoginApi();
 
@@ -99,11 +99,10 @@ class Store {
 
         return loginApi.register({data: loginData}).subscribe(data => {
             if (data.success) {
-                message.success(data.data);
+               // message.success(data.message);
                 this.changeIsLog(true)
             }else{
-                console.log(data)
-                message.error(data.message);
+              //  message.error(data.message);
             }
         })
 
@@ -122,7 +121,7 @@ class Store {
 
         return loginApi.login({data: loginData}).subscribe(data => {
             if (data.success) {
-                message.success(data.data);
+              //  message.success(data.message);
                 this.load();
                 this.onAccount();
                 window.location.href = window.location.hostname + "/#/back";
@@ -160,7 +159,7 @@ class Store {
             if (data.success) {
                 window.location.href = window.location.hostname + "/#/back";
             } else {
-                message.success(data.message);
+               // message.success(data.message);
             }
         })
 
